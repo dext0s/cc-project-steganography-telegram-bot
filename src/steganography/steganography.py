@@ -1,0 +1,2 @@
+class Steganography:
+    pass
