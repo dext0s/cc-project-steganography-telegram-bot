@@ -16,4 +16,4 @@ You can find all documentation related to this milestone [here](milestone-docu/1
 - [User Story definition](https://github.com/dext0s/cc-project-steganography-telegram-bot/issues)
 - [Milestones](https://github.com/dext0s/cc-project-steganography-telegram-bot/milestones)
 - [User Definition](milestone-docu/1-milestone/user-definition.md)
-- [Source class definition](milestone-docu/1-milestone/class-definition.md) 
+- [Source class definition](milestone-docu/1-milestone/class-definition.md)
