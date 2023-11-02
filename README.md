@@ -1,6 +1,24 @@
 # cc-project-steganography-telegram-bot
 
-A Python-based Telegram bot to execute steganography technics and analysis from a smartphone.
+**A Python-based Telegram bot to execute steganography technics and analysis from a smartphone.**
+
+---
+# Application setup
+## Python requirements installation
+TO_DO
+## Telegram bot setup
+TO_DO
+## Run the application
+TO_DO
+## How to run tests
+TO_DO
+## Generate source documentation
+
+The source documentation is generated with [PyDoc](https://docs.python.org/es/3/library/pydoc.html).
+TO_DO how to run to generate documentation automatically
+
+---
+# CC Milestones
 
 ## Milestone 0. Problem description, git and GitHub setup
 

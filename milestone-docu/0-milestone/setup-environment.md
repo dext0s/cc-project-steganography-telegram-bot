@@ -12,3 +12,8 @@ You might need to [install an interpreter](https://www.python.org/downloads/) de
 Proper management of package dependence will be set on the following milestones.
 
 As for code guidelines I'll be following [PEP-8](https://peps.python.org/pep-0008/) and [PEP-257](https://peps.python.org/pep-0257/).
+
+## Code documentation
+
+To generate the documentation of the source code we will use [PyDoc](https://docs.python.org/es/3/library/pydoc.html) standard tool.
+ We will follow up the standard and as an example for it we have [this tutorial](https://www.datacamp.com/tutorial/docstrings-python).
