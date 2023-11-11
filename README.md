@@ -7,7 +7,9 @@
 ## Python requirements installation
 TO_DO
 ## Telegram bot setup
-TO_DO
+
+[Summary of the documentation](docu/telegram-bot-quick-guide.md)
+
 ## Run the application
 TO_DO
 ## How to run tests
