@@ -1,5 +1,5 @@
 entidad: src/admin-interface/admin-interface.py
 entidad: src/auth/auth.py
 entidad: src/persistance/persistance.py
-entidad: src/steganography/steganography.py
 entidad: src/telegram-bot/telegram-bot.py
+entidad: src/telegram-bot/steganography/steganography.py
