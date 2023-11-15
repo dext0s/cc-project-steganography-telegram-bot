@@ -1,7 +1,7 @@
-lenguaje : python
-entidad: 
-  src/admin-interface/admin-interface.py
-  src/auth/auth.py
-  src/persistance/persistance.py
-  src/telegram-bot/telegram-bot.py
-  src/telegram-bot/steganography/steganography.py
+lenguaje: python
+entidad:
+    src/admin-interface/admin-interface.py
+    src/auth/auth.py
+    src/persistance/persistance.py
+    src/telegram-bot/telegram-bot.py
+    src/telegram-bot/steganography/steganography.py
