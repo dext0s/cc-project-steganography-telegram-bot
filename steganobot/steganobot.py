@@ -1,9 +1,14 @@
+import os
+import datetime
 import logging
-import uuid
 from pathlib import Path
+import uuid
 from telegram import Update
 from telegram.ext import Updater, MessageHandler, CallbackContext, Filters
-from .Steganography.Steganography import SteganographyImg
+from .steganography.steganography import SteganographyImg
+
+ENV_VAR_TOKEN = "TELEGRAM_BOT_TOKEN"
+ENV_VAR_TEMPDIR = "TELEGRAM_BOT_TEMP_DIR"
 
 # Based on documentation from https://gitlab.com/Athamaxy/telegram-bot-tutorial/-/blob/main/TutorialBot.py
 logger = logging.getLogger(__name__)
@@ -78,7 +83,44 @@ class TelegramBot(object):
         # Run the bot until you press Ctrl-C
         self.updater.idle()
 
+def handle_exceptions(default_response):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            try:
+                # Call the original function
+                return func(*args, **kwargs)
+            except Exception as e:
+                # Handle the exception and provide the default response
+                logging.exception(e)
+                print(e)
+                return default_response
+
+        return wrapper
+
+    return decorator
+
+# Example usage
+@handle_exceptions(default_response="Whoopsie! something went wrong, check the logs!")
+def main() -> None:
+    # Building temporal directory
+    tb_tempdir = Path(os.getenv(ENV_VAR_TEMPDIR, "./bot_tmp"))
+    os.makedirs(tb_tempdir.resolve(), exist_ok=True)
+    # Setting up logging
+    loggingFilename = (
+        datetime.datetime.now().strftime("%d-%m-%Y_%H:%M:%S") + "_telegramBot.log"
+    )
+    logging_path = tb_tempdir / loggingFilename
+    logging.basicConfig(filename=logging_path.resolve(), level=logging.NOTSET)
+    logger.info("Getting environment variables")
+    # Get configuration from environment for the bot
+    tb_token = os.getenv(ENV_VAR_TOKEN, None)
+    if tb_token == None:
+        raise Exception(
+            "Missing environment variable to define: " + ENV_VAR_TOKEN)
+    logger.info("Initialazing Bot")
+    tbot = TelegramBot(tb_token, tb_tempdir)
+    logger.info("Running Bot")
+    tbot.run()
 
 if __name__ == "__main__":
-    print("attempting to call a module as a main")
-    exit(1)
+    main()

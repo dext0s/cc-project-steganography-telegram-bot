@@ -161,4 +161,5 @@ cython_debug/
 
 #### Telegram Bot related.
 token.txt
-bot_temp
+bot_tmp/
+bot_tmp/*

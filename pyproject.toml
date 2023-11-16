@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "steganobot"
+version = "2.0.1"
+description = "A Python-based Telegram bot to execute steganography technics and analysis from a smartphone"
+authors = ["Xavier Torres <e.xaviertorres@go.ugr.es>"]
+license = "GPL-3.0 license"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-telegram-bot = "13.12"
+uuid = "^1.30"
+datetime = "^5.3"
+logging = "^0.4.9.6"
+pathlib = "^1.0.1"
+pillow = "^10.1.0"
+numpy = "^1.26.2"
+
+[tool.poetry.scripts]
+steganobot = "steganobot.steganobot:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
