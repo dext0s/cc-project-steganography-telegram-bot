@@ -1,4 +1,5 @@
 import os
+import sys
 import datetime
 import logging
 from pathlib import Path
@@ -99,7 +100,6 @@ def handle_exceptions(default_response):
 
     return decorator
 
-# Example usage
 @handle_exceptions(default_response="Whoopsie! something went wrong, check the logs!")
 def main() -> None:
     # Building temporal directory
@@ -110,7 +110,10 @@ def main() -> None:
         datetime.datetime.now().strftime("%d-%m-%Y_%H:%M:%S") + "_telegramBot.log"
     )
     logging_path = tb_tempdir / loggingFilename
-    logging.basicConfig(filename=logging_path.resolve(), level=logging.NOTSET)
+    stdout_handler = logging.StreamHandler(stream=sys.stdout)
+    file_handler = logging.FileHandler(filename=logging_path.resolve())
+    log_handlers = [file_handler, stdout_handler]
+    logging.basicConfig(handlers=log_handlers, level=logging.NOTSET)
     logger.info("Getting environment variables")
     # Get configuration from environment for the bot
     tb_token = os.getenv(ENV_VAR_TOKEN, None)
