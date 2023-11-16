@@ -1,7 +1,13 @@
-lenguaje: python
+lenguaje: 
+    - Python
 entidad:
-    src/admin-interface/admin-interface.py
-    src/auth/auth.py
-    src/persistance/persistance.py
-    src/telegram-bot/telegram-bot.py
-    src/telegram-bot/steganography/steganography.py
+    - steganobot/steganography/steganography.py
+    - steganobot/steganobot.py
+    - steganobot/persistance/persistance.py
+    - steganobot/auth/auth.py
+    - steganobot/admin/admin.py
+test:
+    - steganobot/tests/steganography_test.py
+fichero_tareas:
+    - poetry run pytest -v
+

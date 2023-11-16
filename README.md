@@ -51,11 +51,11 @@ poetry run pytest -v
 
 The source documentation is generated with [PyDoc](https://docs.python.org/es/3/library/pydoc.html).
 
-**TO_DO how to run to generate documentation automatically**
+**🚧 TO_DO how to run to generate documentation automatically🚧**
 
 ## How to use the bot?
 
-You can find a [🚧 manuan under construction 🚧 here](docu/how_to_use_the_bot.md).
+You can find a [🚧 manual under construction 🚧 here](docu/how_to_use_the_bot.md).
 
 ---
 # CC Milestones
@@ -84,7 +84,8 @@ In a nutshell:
 
 - For the task runner I'm using [Poetry](https://python-poetry.org/) as it properly manages [PEP-518](https://peps.python.org/pep-0518) for Python dependencies.
 - As an assertion library I'm using the standard assertion library from python.
-- As a testbench I want to use TDD but i have issues generating the test cases before the implementation. Also I'm doing Unit tests with [Pytest](https://pypi.org/project/pytest/).
+- I wanted to use TDD but Ii have issues generating the test cases before the implementation. Also I'm doing Unit tests with [Pytest](https://pypi.org/project/pytest/).
+![test_results](milestone-docu/2-milestone/resources/successfull_tests.png)
 - Progress on the application:
   -  [M1 - The bot is alive! ](https://github.com/dext0s/cc-project-steganography-telegram-bot/milestone/1) is done. How to register your own bot in Telegram is documented [here](docu/telegram-bot-quick-guide.md).
   -  [M2 - Encrypt into an image](https://github.com/dext0s/cc-project-steganography-telegram-bot/milestone/2) and [M3 - Decrypt an image](https://github.com/dext0s/cc-project-steganography-telegram-bot/milestone/3) 50% done as we still lack the encryption and decryption of two images togeter detailed in [US1](https://github.com/dext0s/cc-project-steganography-telegram-bot/issues/1) and [US3](https://github.com/dext0s/cc-project-steganography-telegram-bot/issues/3).
