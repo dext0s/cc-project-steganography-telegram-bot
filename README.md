@@ -50,6 +50,10 @@ The source documentation is generated with [PyDoc](https://docs.python.org/es/3/
 
 **TO_DO how to run to generate documentation automatically**
 
+## How to use the bot?
+
+You can find a [🚧 manuan under construction 🚧 here](docu/how_to_use_the_bot.md).
+
 ---
 # CC Milestones
 
