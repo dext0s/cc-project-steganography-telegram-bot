@@ -43,7 +43,10 @@ poetry run steganobot
 ```
 
 ## How to run tests
-TO_DO
+
+```bash
+poetry run pytest -v
+```
 ## Generate source documentation
 
 The source documentation is generated with [PyDoc](https://docs.python.org/es/3/library/pydoc.html).
