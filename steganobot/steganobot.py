@@ -38,15 +38,16 @@ class TelegramBot(object):
         logger.debug("Bot Initialization successful")
         pass
 
-    def __generate_img_path(self, extension=".png"):
-        img_name = str(uuid.uuid4()) + extension
+    def __generate_img_path(self,img_name=None, extension=".png"):
+        if img_name == None:
+            img_name = str(uuid.uuid4()) + extension
         img_path = self.tmp_dir / img_name
         return img_path
 
     def __get_image(self, update: Update) -> str:
         bot = self.updater.bot
         file = bot.getFile(update.message.document.file_id)
-        img_path = self.__generate_img_path()
+        img_path = self.__generate_img_path(img_name=update.message.document.file_name)
         file.download(img_path.resolve())
         return img_path
 

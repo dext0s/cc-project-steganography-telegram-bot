@@ -1,6 +1,7 @@
 import logging
 import numpy as np
 from PIL import Image
+from io import BytesIO
 
 logger = logging.getLogger(__name__)
 
@@ -11,7 +12,7 @@ class SteganographyImg(object):
     def __init__(self, src, dest):
         self.src = src
         self.dest = dest
-        self.img = Image.open(self.src, "r")
+        self.img = self.__open_image()
         self.array = np.array(list(self.img.getdata()))
         self.width, self.height = self.img.size
         self.img_chan_n = self.__get_mode()
@@ -54,23 +55,35 @@ class SteganographyImg(object):
 
         message = ""
         for i in range(len(hidden_bits)):
-            if message[-4:] == delim:
+            if message[-len(delim):] == delim:
                 break
             else:
                 message += chr(int(hidden_bits[i], 2))
         logger.debug(message)
         if delim in message:
-            return message[:-4]
+            return message[:-len(delim)]
         else:
             return "No Hidden Message Found"
 
     def __get_mode(self) -> int:
+        logger.error("image mode is :" + str(self.img.mode))
         if self.img.mode == "RGB":
             n = 3
         elif self.img.mode == "RGBA":
             n = 4
+        else:
+            self.img.convert('RGB')
+            n = 3
         return n
 
+    def __open_image(self) -> Image:
+        img = Image.open(self.src, "r")
+        if img.format != "png":
+            membuf = BytesIO()
+            img.save(membuf, format="png")
+            img.close()
+            img = Image.open(membuf)
+        return img
 
 if __name__ == "__main__":
     print("attempting to call a module as a main")

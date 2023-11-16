@@ -1,20 +1,15 @@
 # Test setup and considerations:
 
-## Task manager
-
-## Test runner
+## Task manager and est runner
+For the runner and manager I'm using [Poetry](https://python-poetry.org/) as it properly manages [PEP-518](https://peps.python.org/pep-0518) for Python dependencies.
 
 ## Assertions 
 
-## App build
-
-In a future stage of the app the objective is to set up Poetry
-To keep the requisites for the app we are following [PEP-518]https://peps.python.org/pep-0518.
-This means the code will have a **pyproject.toml** which details the dependences.
+As an assertion library I'm using the standard assertion library from python.
 
 ## App linting 
 
-Checking linting follows [PEP-8](https://peps.python.org/pep-0008/), [PEP-518]https://peps.python.org/pep-0518 and [PEP-257](https://peps.python.org/pep-0257/).
+Pylint to check linting follows [PEP-8](https://peps.python.org/pep-0008/), [PEP-518]https://peps.python.org/pep-0518 and [PEP-257](https://peps.python.org/pep-0257/). (In Progress).
 
 ## Telegram bot testing
 
